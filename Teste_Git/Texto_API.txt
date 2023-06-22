@@ -1,0 +1,24 @@
+API => Conjunto de rotinas e padrões de programação para acesso a um aplicativo de software ou plataforma
+baseado na Web. Sua sigla refere-se ao termo em inglÊs "Application Programming Interface"
+
+Mini sistema que eu uso para acessar um sistema maior
+Um lugar para disponibilizar um recursos e/ou funcionalidades
+
+Oq eu preciso pensar para ter uma API? Objetivo, URL base, Edpoints (funcionalidades) e Recursos (oq eu vou disponibilizar)
+
+Criando uma api
+-Instale o python
+-Instale o Visual Code
+{Flask}
+1º terminal -> pip install flask => só funciona se tiver o python instalado
+Exemplo de uma API: 
+	Objetivo - Criar uma api que disponibilize a consulta, criação, edição e exclusão de livros
+	URL base - localhost
+	Endpoints - Tipos de funcionalidades: 
+		localhost/livros (GET) => consulto todos os livros
+		localhost/livros (POST) => criar livros
+		localhost/livros/id (GET) => consulto livros específicos
+		localhost/livros/id (PUT) => modifico um livro específico
+		localhost/livros/id (DELETE) => deleto um livro específico
+
+	Quais recursos - Livros

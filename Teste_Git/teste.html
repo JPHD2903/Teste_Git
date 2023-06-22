@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Clima</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Informações de Clima</h1>
+  <div id="weather"></div>
+
+  <script>
+    // Chave de API da OpenWeatherMap
+    const apiKey = 'SUA_CHAVE_DE_API';
+
+    // ID da cidade que você deseja obter o clima (exemplo: São Paulo, Brasil)
+    const cityId = 'YOUR_CITY_ID';
+
+    // URL da API do OpenWeatherMap
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}`;
+
+    // Função para obter os dados de clima da API
+    function getWeather() {
+      $.getJSON(apiUrl, function(data) {
+        const weatherInfo = data.weather[0];
+        const temperature = data.main.temp;
+        const city = data.name;
+
+        const weatherHtml = `
+          <p>Cidade: ${city}</p>
+          <p>Condição do tempo: ${weatherInfo.main}</p>
+          <p>Temperatura: ${temperature} K</p>
+        `;
+
+        $('#weather').html(weatherHtml);
+      });
+    }
+
+    // Chamada da função para obter os dados de clima ao carregar a página
+    $(document).ready(function() {
+      getWeather();
+    });
+  </script>
+</body>
+</html>
